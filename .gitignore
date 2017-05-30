@@ -1,4 +1,15 @@
 /[Bb]uild/
 /[Bb]uilds/
 
+/[Pp]roject/bin/
+/[Pp]roject/doc/
+/[Pp]roject/include/
+/[Pp]roject/lib/
+/[Pp]roject/libc/
+
+/[Pp]roject/build.mak
+/[Pp]roject/ChangeLog
+/[Pp]roject/mega.mak
+/[Pp]roject/README
+
 GameBoyCompile.cmd
