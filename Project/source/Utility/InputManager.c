@@ -28,11 +28,11 @@ BOOL prevIsSelect = FALSE;
 void UpdateInputs()
 {
 	// Get inputs
-	//UINT8 inputs;
-	//inputs = joypad();
+	UINT8 inputs;
+	inputs = joypad();
 	
 	// Right
-	if(joypad() == J_RIGHT){
+	if(inputs & J_RIGHT){
 		if(isRight == FALSE){
 			isRight = TRUE;
 		}else{
@@ -46,7 +46,7 @@ void UpdateInputs()
 		}
 	}
 	// Left
-	if(joypad() == J_LEFT){
+	if(inputs & J_LEFT){
 		if(isLeft == FALSE){
 			isLeft = TRUE;
 		}else{
@@ -60,7 +60,7 @@ void UpdateInputs()
 		}
 	}
 	// Up
-	if(joypad() == J_UP){
+	if(inputs & J_UP){
 		if(isUp == FALSE){
 			isUp = TRUE;
 		}else{
@@ -74,7 +74,7 @@ void UpdateInputs()
 		}
 	}
 	// Down
-	if(joypad() == J_DOWN){
+	if(inputs & J_DOWN){
 		if(isDown == FALSE){
 			isDown = TRUE;
 		}else{
@@ -88,7 +88,7 @@ void UpdateInputs()
 		}
 	}
 	// Start
-	if(joypad() == J_START){
+	if(inputs & J_START){
 		if(isStart == FALSE){
 			isStart = TRUE;
 		}else{
@@ -102,7 +102,7 @@ void UpdateInputs()
 		}
 	}
 	// Select
-	if(joypad() == J_SELECT){
+	if(inputs & J_SELECT){
 		if(isSelect == FALSE){
 			isSelect = TRUE;
 		}else{
@@ -116,7 +116,7 @@ void UpdateInputs()
 		}
 	}
 	// A
-	if(joypad() == J_A){
+	if(inputs & J_A){
 		if(isA == FALSE){
 			isA = TRUE;
 		}else{
@@ -130,7 +130,7 @@ void UpdateInputs()
 		}
 	}
 	// B
-	if(joypad() == J_B){
+	if(inputs & J_B){
 		if(isB == FALSE){
 			isB = TRUE;
 		}else{
@@ -143,8 +143,6 @@ void UpdateInputs()
 			prevIsB = FALSE;
 		}
 	}
-	
-	delay(10);
 }
 
 // True on the frame the button is pressed

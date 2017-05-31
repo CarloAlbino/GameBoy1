@@ -25,7 +25,7 @@ int main()
 	
 	// Render the sprites
 	SHOW_SPRITES;
-
+	
 	// Game loop
 	while(1)
 	{
@@ -43,7 +43,7 @@ int main()
 		if(GetButton(J_DOWN) == TRUE){
 			y++;
 		}
-		
+
 		if(GetButtonDown(J_A) == TRUE){
 			sprite++;
 			if(sprite >= maxSprites){
@@ -62,6 +62,8 @@ int main()
 		move_sprite(0, x, y);
 		set_sprite_tile(1, (maxSprites - 1) * sprite + 2);
 		move_sprite(1, x + 8, y);
+		
+		delay(10);
 	}
 	
 	return 0;
