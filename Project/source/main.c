@@ -1,7 +1,9 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <gb/gb.h>
 #include "../source/Sprites/Emojis.c"
-#include "../source/Utility/InputManager.c"
+#include "../source/Utility/InputManager.c"*/
+//#include <stdlib.h>
+#include "../source/player.c"
 
 int main()
 {
@@ -12,16 +14,23 @@ int main()
 	int x = 75;
 	int y = 75;
 	
+		
+	Entity player = new_Entity(x, y, 2, 2, 4);
+	
 	// Set mode to 8x16 sprites
 	SPRITES_8x16;
 	// Load emoji sprites
 	set_sprite_data(0, 20, Emojis);
 	
+	/*
 	// Set the first emoji
 	set_sprite_tile(0, (maxSprites - 1) * sprite);
 	move_sprite(0, x, y);
 	set_sprite_tile(1, (maxSprites - 1) * sprite + 2);
 	move_sprite(1, x + 8, y);
+	*/
+	
+	
 	
 	// Render the sprites
 	SHOW_SPRITES;
@@ -31,6 +40,9 @@ int main()
 	{
 		UpdateInputs();
 		
+		player->Move(&player);
+		player->Render(&player);
+		/*
 		if(GetButton(J_RIGHT) == TRUE){
 			x++;
 		}
@@ -62,7 +74,7 @@ int main()
 		move_sprite(0, x, y);
 		set_sprite_tile(1, (maxSprites - 1) * sprite + 2);
 		move_sprite(1, x + 8, y);
-		
+		*/
 		delay(10);
 	}
 	
